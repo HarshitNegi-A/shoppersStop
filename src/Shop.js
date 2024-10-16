@@ -22,7 +22,10 @@ const Shop=(props)=>{
             "price":price,
             "l":l,
             "m":m,
-            "s":s
+            "s":s,
+            "numberOfL":0,
+            "numberOfM":0,
+            "numberOfS":0,
         }
         shopcntx.addItem(obj)
         
@@ -45,7 +48,7 @@ const Shop=(props)=>{
         <input type="number" id="sizeS" value={s} onChange={(e)=>{setS(e.target.value)}}/>
         <button type="submit">Add Product</button>
     </form>
-    <button type="click" onClick={props.onShowCart}>Cart{cartCtx.items.length}</button>
+    <button type="click" onClick={props.onShowCart}>Cart{cartCtx.count}</button>
     </div>
 }
 export default Shop;

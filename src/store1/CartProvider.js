@@ -4,14 +4,21 @@ import CartContext from "./cart-context"
 const CartProvider=(props)=>{
 
     const [items,setItems]=useState([])
+    const [count,setCount]=useState(0)
 
     const handleAddToCart=(item)=>{
         setItems([...items,item])
     }
+    const handleAddCount=()=>{
+        setCount(count+1);
+    }
+
 
     const cartContext={
         items:items,
-        addItem:handleAddToCart
+        count:count,
+        addCount:handleAddCount,
+        addItem:handleAddToCart,
     }
 
 
